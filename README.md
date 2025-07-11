@@ -59,6 +59,10 @@ Feature Count: 43438
 Sample Feature: [457144.237, 31.739251728, 35.2061274014, ...]
 ==========================
 ```
+🛠️ Developer Notes
+Built for datasets where latitude, longitude, and elevation are embedded as space-separated values.
+
+Auto-detects structure without needing headers or consistent tabs.
 
 ## 🧑‍💻 Author
 
