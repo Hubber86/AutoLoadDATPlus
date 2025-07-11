@@ -8,3 +8,9 @@ email=prajwalkalashetty786@gmail.com
 homepage=https://github.com/Hubber86/AutoLoadDATPlus/
 category=Vector
 icon=icon.png
+
+# Optional but recommended
+about=AutoLoadDATPlus allows users to load space-separated .dat files as point layers. It preprocesses, cleans, and maps fields to X, Y, and Z automatically.
+tracker=https://github.com/Hubber86/AutoLoadDATPlus/issues
+repository=https://github.com/Hubber86/AutoLoadDATPlus
+tags=dat, loader, csv, xyz, vector, point layer, automation
