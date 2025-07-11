@@ -118,6 +118,14 @@ Sample Feature: [457144.237, 31.739251728, 35.2061274014, ...]
 - Automatically detects structure—no need for headers or consistent delimiters.
 
 ---
+## 🤝 Contributing
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+Make sure to follow the project's coding standards and commit message guidelines, if any.
+
+Thank you for helping improve this project!
+---
 
 ## 🧑‍💻 Author
 
