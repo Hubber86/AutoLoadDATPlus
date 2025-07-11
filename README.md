@@ -118,6 +118,13 @@ Sample Feature: [457144.237, 31.739251728, 35.2061274014, ...]
 - Automatically detects structure—no need for headers or consistent delimiters.
 
 ---
+## ✅ Tested Environment
+
+- **QGIS**: Version 3.14 (Pi) and above  
+- **Operating System**: Windows (should also work on macOS/Linux if file paths are correctly set)  
+- **Python**: Version 3.x
+---
+
 ## 🤝 Contributing
 
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
