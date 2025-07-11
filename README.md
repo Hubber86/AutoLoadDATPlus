@@ -134,6 +134,14 @@ Make sure to follow the project's coding standards and commit message guidelines
 Thank you for helping improve this project!
 ---
 
+## 📬 Contact
+
+For feedback, issues, or feature requests, feel free to:
+
+- 📧 Email: [prajwalkalashetty786@gmail.com](mailto:prajwalkalashetty786@gmail.com)  
+- 🐞 Open an [issue](../../issues) on GitHub
+---
+
 ## 🧑‍💻 Author
 
 Developed by [Prajwal Kalashetty](https://github.com/Hubber86)
