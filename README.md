@@ -59,7 +59,20 @@ There is no header row, and all values are numeric.
 3. The plugin will preprocess and load each as a point layer.
 
 ---
+## 🔧 How It Works
 
+1. Prompts the user to select one or more `.dat` files.
+2. Preprocesses each file:
+   - Cleans extra whitespace
+   - Converts to tab-delimited temporary file
+3. Loads the processed file using QGIS's Delimited Text provider.
+4. Automatically sets:
+   - `field_3` as X coordinate
+   - `field_2` as Y coordinate
+   - `field_4` as Z value
+5. Adds the layer to the map and zooms to its extent.
+
+---
 ## 📸 Example Output
 
 After loading:
