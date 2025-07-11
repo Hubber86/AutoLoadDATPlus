@@ -51,14 +51,15 @@ There is no header row, and all values are numeric.
 
 ---
 ## 📂 File Structure
+```
 AutoLoadDATPlus/
-├── AutoLoadDATPlus.py         # Your plugin's main code
-├── __init__.py                # Plugin loader for QGIS
-├── metadata.txt               # Required QGIS plugin metadata
-├── icon.png                   # Optional plugin icon (16x16 or 32x32)
-├── README.md                  # Your GitHub README
-└── LICENSE                    # License file (MIT recommended)
-
+├── AutoLoadDATPlus.py # Main plugin code
+├── init.py # Initializes the plugin for QGIS
+├── metadata.txt # QGIS plugin metadata (required)
+├── icon.png # Plugin icon (optional, 16x16 or 32x32)
+├── README.md # Project documentation (this file)
+└── LICENSE # License file (e.g., MIT)
+```
 ---
 ## ✅ Requirements
 
