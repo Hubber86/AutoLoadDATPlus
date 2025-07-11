@@ -5,3 +5,6 @@ description=Automatically loads .dat files with predefined geometry
 version=4.0
 author=Prajwal Kalashetty
 email=prajwalkalashetty786@gmail.com
+homepage=https://github.com/Hubber86/AutoLoadDATPlus/
+category=Vector
+icon=icon.png
