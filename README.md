@@ -1,4 +1,12 @@
 # AutoLoadDATPlus Plugin for QGIS
+# AutoLoadDATPlus
+
+![QGIS](https://img.shields.io/badge/QGIS-3.14+-green?logo=qgis)
+![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-blue)
+![License](https://img.shields.io/github/license/Hubber86/AutoLoadDATPlus)
+![Last Commit](https://img.shields.io/github/last-commit/Hubber86/AutoLoadDATPlus)
+![Issues](https://img.shields.io/github/issues/Hubber86/AutoLoadDATPlus)
+
 
 AutoLoadDATPlus is a QGIS plugin that allows users to automatically load `.dat` files (space-separated numeric datasets) as point layers in QGIS. It intelligently pre-processes `.dat` files to clean and convert them into a format compatible with QGIS, mapping fields automatically to X, Y, and Z coordinates.
 
