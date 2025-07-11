@@ -51,6 +51,13 @@ There is no header row, and all values are numeric.
 
 ---
 
+## ✅ Requirements
+
+- QGIS 3.14 Pi or newer
+- Python 3 (comes with QGIS)
+- No external dependencies
+
+---
 ## 🚀 Usage
 
 1. Open QGIS and go to:  
