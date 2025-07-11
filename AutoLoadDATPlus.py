@@ -12,7 +12,9 @@ class AutoLoadDATPlusPlugin:
         self.action = None
 
     def initGui(self):
-        self.action = QAction(QIcon(), "4.0 Load .DAT File (AutoLoadDATPlus)", self.iface.mainWindow())
+        # Optional: Provide path to your plugin's icon if available
+        icon = QIcon(":/plugins/AutoLoadDATPlus/icon.png") if os.path.exists("icon.png") else QIcon()
+        self.action = QAction(icon, "4.0 Load .DAT File (AutoLoadDATPlus)", self.iface.mainWindow())
         self.action.triggered.connect(self.load_dat_files)
         self.iface.addToolBarIcon(self.action)
         self.iface.addPluginToMenu("4.0 AutoLoadDATPlus", self.action)
@@ -22,14 +24,21 @@ class AutoLoadDATPlusPlugin:
         self.iface.removePluginMenu("4.0 AutoLoadDATPlus", self.action)
 
     def load_dat_files(self):
-        file_paths, _ = QFileDialog.getOpenFileNames(None, "Select .dat Files", "", "DAT Files (*.dat)")
+        file_paths, _ = QFileDialog.getOpenFileNames(
+            None, "Select .dat Files", "", "DAT Files (*.dat)"
+        )
+        if not file_paths:
+            return
         for file_path in file_paths:
-            self.preprocess_and_load(file_path)
+            try:
+                self.preprocess_and_load(file_path)
+            except Exception as e:
+                QMessageBox.critical(None, "AutoLoadDATPlus", f"Error loading file:\n{file_path}\n\n{str(e)}")
 
     def preprocess_and_load(self, file_path):
         layer_name = os.path.splitext(os.path.basename(file_path))[0]
 
-        # Read and split using regex
+        # Read lines and clean with regex
         with open(file_path, 'r') as f:
             lines = f.readlines()
 
@@ -40,18 +49,17 @@ class AutoLoadDATPlusPlugin:
                 cleaned_rows.append(parts)
 
         if not cleaned_rows:
-            QMessageBox.warning(None, "AutoLoadDATPlus", f"No valid data found in file: {file_path}")
+            QMessageBox.warning(None, "AutoLoadDATPlus", f"No valid data found in file:\n{file_path}")
             return
 
-        print("Sample cleaned row:", cleaned_rows[0])  # debug
+        print("Sample cleaned row:", cleaned_rows[0])  # Debug
 
-        # Save as UTF-8 tab-delimited CSV
+        # Write to temp tab-delimited CSV
         tmp_path = tempfile.mktemp(suffix=".csv")
         with open(tmp_path, 'w', newline='', encoding='utf-8') as f:
             writer = csv.writer(f, delimiter='\t', quoting=csv.QUOTE_NONE, escapechar='\\')
             writer.writerows(cleaned_rows)
 
-        # Use actual '\t' instead of %09
         uri = (
             f"file:///{tmp_path}?type=csv&"
             "delimiter=\\t&"
@@ -66,7 +74,6 @@ class AutoLoadDATPlusPlugin:
 
         layer = QgsVectorLayer(uri, layer_name, "delimitedtext")
 
-        # Debug info
         print("=== DEBUG ===")
         print("URI:", uri)
         print("Valid:", layer.isValid())
@@ -82,4 +89,5 @@ class AutoLoadDATPlusPlugin:
             self.iface.mapCanvas().setExtent(layer.extent())
             self.iface.mapCanvas().refresh()
         else:
-            QMessageBox.warning(None, "AutoLoadDATPlus", f"Failed to load: {layer_name}\nCheck file format.")
+            QMessageBox.warning(None, "AutoLoadDATPlus", f"Failed to load layer:\n{layer_name}\nCheck file format.")
+
