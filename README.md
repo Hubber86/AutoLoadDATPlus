@@ -50,7 +50,16 @@ There is no header row, and all values are numeric.
 3. Restart QGIS and enable **AutoLoadDATPlus** in the Plugin Manager.
 
 ---
+## 📂 File Structure
+AutoLoadDATPlus/
+├── AutoLoadDATPlus.py         # Your plugin's main code
+├── __init__.py                # Plugin loader for QGIS
+├── metadata.txt               # Required QGIS plugin metadata
+├── icon.png                   # Optional plugin icon (16x16 or 32x32)
+├── README.md                  # Your GitHub README
+└── LICENSE                    # License file (MIT recommended)
 
+---
 ## ✅ Requirements
 
 - QGIS 3.14 Pi or newer
